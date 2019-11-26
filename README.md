@@ -1,5 +1,4 @@
-# Bachelor-of-Science
-## Applied Computer Science HOGENT
+# Applied Computer Science HOGENT
 
-## How will Quantum computing affect the mainframe?
+### How will Quantum computing affect the mainframe?
 This will be my repository where I store my Bachelor's thesis, and needed documents.
