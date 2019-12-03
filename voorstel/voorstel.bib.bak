@@ -82,7 +82,7 @@
   numpages  = {11},
 }
 
-@InProceedings{AES2000,
+@InProceedings{Daemen2000,
   author    = {Daemen, Joan and Rijmen, Vincent},
   title     = {The Block Cipher Rijndael},
   booktitle = {Smart Card Research and Applications},
@@ -93,6 +93,60 @@
   pages     = {277--284},
   abstract  = {In this paper we present the block cipher Rijndael, which is one of the fifteen candidate algorithms for the Advanced Encryption Standard (AES). We show that the cipher can be implemented very efficiently on Smart Cards.},
   address   = {Berlin, Heidelberg},
+}
+
+@Misc{Qiskit,
+  author = {H{\'e}ctor Abraham and Ismail Yunus Akhalwaya and Gadi Aleksandrowicz and Thomas Alexander and Gadi Alexandrowics and Eli Arbel and Abraham Asfaw and Carlos Azaustre and Panagiotis Barkoutsos and George Barron and Luciano Bello and Yael Ben-Haim and Daniel Bevenius and Lev S. Bishop and Samuel Bosch and David Bucher and CZ and Fran Cabrera and Padraic Calpin and Lauren Capelluto and Jorge Carballo and Gin{\'e}s Carrascal and Adrian Chen and Chun-Fu Chen and Richard Chen and Jerry M. Chow and Christian Claus and Christian Clauss and Abigail J. Cross and Andrew W. Cross and Juan Cruz-Benito and Cryoris and Chris Culver and Antonio D. C{\'o}rcoles-Gonzales and Sean Dague and Matthieu Dartiailh and Abd{\'o}n Rodr{\'\i}guez Davila and Delton Ding and Eugene Dumitrescu and Karel Dumon and Ivan Duran and Pieter Eendebak and Daniel Egger and Mark Everitt and Paco Mart{\'\i}n Fern{\'a}ndez and Albert Frisch and Andreas Fuhrer and IAN GOULD and Julien Gacon and Gadi and Borja Godoy Gago and Jay M. Gambetta and Luis Garcia and Shelly Garion and Gawel-Kus and Juan Gomez-Mosquera and Salvador de la Puente Gonz{\'a}lez and Donny Greenberg and John A. Gunnels and Isabel Haide and Ikko Hamamura and Vojtech Havlicek and Joe Hellmers and {\L}ukasz Herok and Hiroshi Horii and Connor Howington and Shaohan Hu and Wei Hu and Haruki Imai and Takashi Imamichi and Raban Iten and Toshinari Itoko and Ali Javadi-Abhari and Jessica and Kiran Johns and Naoki Kanazawa and Anton Karazeev and Paul Kassebaum and Arseny Kovyrshin and Vivek Krishnan and Kevin Krsulich and Gawel Kus and Ryan LaRose and Rapha{\"e}l Lambert and Joe Latone and Scott Lawrence and Dennis Liu and Peng Liu and Panagiotis Barkoutsos ZRL Mac and Yunho Maeng and Aleksei Malyshev and Jakub Marecek and Manoel Marques and Dolph Mathews and Atsushi Matsuo and Douglas T. McClure and Cameron McGarry and David McKay and Srujan Meesala and Antonio Mezzacapo and Rohit Midha and Zlatko Minev and Michael Duane Mooring and Renier Morales and Niall Moran and Prakash Murali and Jan M{\"u}ggenburg and David Nadlinger and Giacomo Nannicini and Paul Nation and Yehuda Naveh and Nick-Singstock and Pradeep Niroula and Hassi Norlen and Lee James O'Riordan and Pauline Ollitrault and Steven Oud and Dan Padilha and Hanhee Paik and Simone Perriello and Anna Phan and Marco Pistoia and Alejandro Pozas-iKerstjens and Viktor Prutyanov and Jes{\'u}s P{\'e}rez and Quintiii and Rudy Raymond and Rafael Mart{\'\i}n-Cuevas Redondo and Max Reuter and Diego M. Rodr{\'\i}guez and Mingi Ryu and Martin Sandberg and Ninad Sathaye and Bruno Schmitt and Chris Schnabel and Travis L. Scholten and Eddie Schoute and Ismael Faro Sertage and Nathan Shammah and Yunong Shi and Adenilton Silva and Yukio Siraichi and Seyon Sivarajah and John A. Smolin and Mathias Soeken and Dominik Steenken and Matt Stypulkoski and Hitomi Takahashi and Charles Taylor and Pete Taylour and Soolu Thomas and Mathieu Tillet and Maddy Tod and Enrique de la Torre and Kenso Trabing and Matthew Treinish and TrishaPe and Wes Turner and Yotam Vaknin and Carmen Recio Valcarce and Francois Varchon and Desiree Vogt-Lee and Christophe Vuillot and James Weaver and Rafal Wieczorek and Jonathan A. Wildstrom and Robert Wille and Erick Winston and Jack J. Woehr and Stefan Woerner and Ryan Woo and Christopher J. Wood and Ryan Wood and Stephen Wood and James Wootton and Daniyar Yeralin and Jessie Yu and Laura Zdanski and Zoufalc and anedumla and azulehner and bcamorrison and brandhsn and dennis-liu-1 and drholmie and elfrocampeador and fanizzamarco and gruu and kanejess and klinvill and lerongil and ma5x and merav-aharoni and mrossinek and ordmoj and strickroman and tigerjack and yang.luh and yotamvakninibm},
+  title  = {Qiskit: An Open-source Framework for Quantum Computing},
+  year   = {2019},
+  doi    = {10.5281/zenodo.2562110},
+}
+
+@Article{Cory1998,
+  author    = {Cory, D. G. and Price, M. D. and Maas, W. and Knill, E. and Laflamme, R. and Zurek, W. H. and Havel, T. F. and Somaroo, S. S.},
+  title     = {Experimental Quantum Error Correction},
+  journal   = {Phys. Rev. Lett.},
+  year      = {1998},
+  volume    = {81},
+  issue     = {10},
+  month     = {Sep},
+  pages     = {2152--2155},
+  doi       = {10.1103/PhysRevLett.81.2152},
+  url       = {https://link.aps.org/doi/10.1103/PhysRevLett.81.2152},
+  numpages  = {0},
+  publisher = {American Physical Society},
+}
+
+@Article{Dirac1939,
+  author    = {Dirac, P. A. M.},
+  title     = {A new notation for quantum mechanics},
+  journal   = {Mathematical Proceedings of the Cambridge Philosophical Society},
+  year      = {1939},
+  volume    = {35},
+  number    = {3},
+  pages     = {416–418},
+  doi       = {10.1017/S0305004100021162},
+  publisher = {Cambridge University Press},
+}
+
+@Article{Rivest1978,
+  author     = {Rivest, R. L. and Shamir, A. and Adleman, L.},
+  title      = {A Method for Obtaining Digital Signatures and Public-key Cryptosystems},
+  journal    = {Commun. ACM},
+  year       = {1978},
+  volume     = {21},
+  number     = {2},
+  month      = feb,
+  pages      = {120--126},
+  issn       = {0001-0782},
+  doi        = {10.1145/359340.359342},
+  url        = {http://doi.acm.org/10.1145/359340.359342},
+  acmid      = {359342},
+  address    = {New York, NY, USA},
+  issue_date = {Feb. 1978},
+  keywords   = {authentication, cryptography, digital signatures, electronic funds transfer, electronic mail, factorization, message-passing, prime number, privacy, public-key cryptosystems, security},
+  numpages   = {7},
+  publisher  = {ACM},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}

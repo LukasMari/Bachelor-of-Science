@@ -2,8 +2,10 @@
 
 \section{Introduction} % The \section*{} command stops section numbering
 \label{sec:introductie}
-
-With the approaching realisations of quantum technology, the interest in the subject has risen exponentially. There has been a strong believe in the last 30 years that quantum computing can and will influence our environment more than we think. The mainframe environment is one of the sectors that can become the most influential in \emph{computer science}, because of its immense creation of data. Data will become the driving factor inside our societies, think of how much our daily lives are controlled by data ( e.g. online shopping, social media etc.). With the usage of mainframes we are able to create a sense of logic in this almost infinite pile of data. But through the utilisation of quantum computing, data exploration and mining can become much more thorough and meaningful for business applications. The main driving factors for technological breakthroughs have always been wars and economics ( e.g. Atomic energy, commercial aircraft, radio etc.). The more applications of quantum computing that we are able to find for existing economical applications, the more general investment in research will be made. Which would obviously boost both fields at once. In this paper we will try and find these general applications in reality of quantum computing.
+\subsection{Situating the subject}
+ There has been a strong believe in the last 30 years that quantum computing can and will influence our environment more than we think. In case of the mainframe environment it will maybe be the most influential sector in \emph{computer science}, because of its immense creation of data. Data will become or has already been the driving factor inside our societies, think of how much our daily lives are already controlled by data ( e.g. online shopping, social media etc.). With the usage of mainframes we are able to create a sense of logic in this almost infinite pile of data. Now with \emph{ theoretical} utilisation of quantum computing, data can become much more important and meaningful for business applications. 
+ 
+ The main driving factors for technological breakthroughs have always been wars and economics ( e.g. Atomic energy, commercial aircraft, radio etc.). If we are able to find and explore quantum applications for our current high-transactional business applications, a new wave of investment in research will open up. Which would obviously boost both fields at once. In this paper we will try and find these general applications that can prevail through the use of quantum technology.
 
 \subsection{Topics}
 \begin{itemize}
@@ -18,14 +20,43 @@ With the approaching realisations of quantum technology, the interest in the sub
 \section{State-of-the-art}
 \label{sec:state-of-the-art}
 \subsection{Prior knowledge}
-Inside the paper a couple of physics associated terms will be utilised. If you are not familiar with basic quantum physics notations, it would be highly recommended to read one or both of the following papers, ~\textcite{Rieffel1998} or ~\textcite{Shor2000}. It is also possible to read this paper as an informational piece without the implications of the mathematics and physics surrounding the subject. As previously stated the paper will not be going in depth technologically, because the paper wants to expose the practical usages of quantum computing compared to classical computing and because that would reach far out of the scope of this paper.
+Inside the paper a couple of physics associated terms will be utilised. If you are not familiar with basic quantum physics notations, it would be highly recommended to read one or both of the following papers, ~\textcite{Rieffel1998} or ~\textcite{Shor2000}. For the general quantum notation that are used in the field, we refer towards ~\textcite{Dirac1939}. It is also possible to read this paper as an informational piece without the implications of the mathematics and physics surrounding the subject. As previously stated the paper will not be going in depth technologically, because the scope is more focused on exposing the practical usages of quantum computing compared to classical computing or the combination of both.
 
-\subsection{Literature review}
+\subsection{Recent developments}
 
-As of now Google has claimed to have won the \emph{Quantum Supremacy race} ~\autocite{Google2019}
-% Voor literatuurverwijzingen zijn er twee belangrijke 
+As of now Google has claimed to have won the \emph{Quantum Supremacy race} ~\autocite{Google2019} against IBM. They have realised this through the creation of their 53-Qubit quantum computer, that is able to perform a calculation exponentially faster than an classical system could ever hope to perform. In this case the \emph{Sycamore} ( Quantum processor) was able to perform a calculation within 200 seconds that could only be performed by a classical computer over 10.000 years. Although it most definitely was an experimental calculation that has no real value in the business world, it does prove the potential of quantum computing. IBM, Google's main rival in quantum computing, has expressed concerns regarding the claim of Google that the task would take 10.000 years on a classical machine. Despite this, Google has still achieved the status of releasing the first paper proving the viability of quantum computing in the real world. It has been rumoured that IBM will release its counterpart of its research in 2020. The fact that these 2 conglomerates are competing so fiercely will only further the technological developments in the realm of quantum mechanics. IBM has not been sitting idly either they have released algorithms applications with quantum \autocite{IBM2019}
 
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
+
+\subsection{General explication of quantum computing}
+
+There are a few advantages that quantum computers have over any classical machine, to understand them we will have to introduce a couple of explanations.
+
+The first is \emph{superposition}, it is the term used to explain how a quantum bit ( Qubit) can be in multiple states at once. In classical computing we are able to represent 1 state at a time with the use of a normal bit, 0 or 1. In quantum computing this is different through the use of superposition, a qubit can be in both states at one point in computation. ~\autocite{Shor2000} Effectively this means that quantum computers can exponentially gain computational space through only the addition of 1 qubit, while a classical computer would add bits to only linearly gain computational space. But this only counts inside the computation, because as we know a qubit will 'fall' in a single state as soon as it is observed/ measured. \autocite{Rieffel1998}
+
+A practical example for a clearer understanding of the term. Suppose that we have a classical system where we have access to 4 bits of processing space, this would effectively mean that we are able to represent 16 different states. If we compare it now we suppose a quantum system that utilizes 4 qubits of processing space, if we take in accounts the use of superposition 1 qubit is able to represent 2 classical bits. Meaning that we now have access to 16 computational space in classical bits, which also means that we have 65536 different states to represent. 
+
+\begin{equation}
+	Classical:\quad 4 \quad bits => 2^{4} states
+\end{equation}
+\begin{equation}
+		Quantum: \quad 4 \quad qubits => 16^{4} states
+\end{equation}
+
+Another really powerful tool for quantum computations is called \emph{entanglement}. It describes the physical phenomenon that 2 particles can become entangled, meaning that ones state can directly influence the state of the other over an infinite distance. In our case, the particles represent the qubits that can become entangle which could mean that if 1 qubit is measured in a specific state and it is entangled with another qubit, it means that we are able to know the state of the other qubit \emph{without} measuring it. Think of the possible utilisation in communication in between devices and/ or networks that this physical phenomenon could introduce.
+
+\emph{Decoherence} is also a term that forms a big issue right now for further advancements in quantum computing. Decoherence is the term that describes how a qubit can lose its quantum capabilities over time or due to interference from the outside world, currently to achieve quantum aspects we need to cool down the quantum devices to around 0 Kelvin or -273.15 degrees Celsius. Only slight fluctuations of the near perfect conditions can mean that the qubits lose their quantum capabilities, which would mean that the eventual computation becomes useless. As of now the Sycamore processor from Google has achieved the largest amount of qubits (53) to be used for a computation with 'fighting off' the decoherence. With 'fighting off' we are referring towards the process of Quantum Error Correction ( QEC), this is a process that tries to prevent the decoherence and interference between the qubits. This is as of now the main restriction on just expanding the number of qubits, because the more qubits are used in the system the more the system will be susceptible for decoherence and interference. ~\autocite{Cory1998}
+
+\subsection{Practical fields of study using quantum}
+
+\subsubsection{Security}
+A great concern with the rise of quantum computing has come up, people are believing that our current encryption system is easily breached by quantum computation. But indeed everyone was shocked when Peter Shor released his paper ~\textcite{Shor1994}, which described a way to resolve prime factorization on quantum computers. A classical computer can easily find the result of a multiplication but finding the factors of a large number is an exponential computation for a normal computer. Shor's algorithm uses superposition and quantum Fourrier transform to resolve this exponential issue, meaning that it would suddenly become really easy to brute-force encryptions of data ( e.g. RSA).~\autocite{Rivest1978} This could possibly mean that the praised mainframe environment would become a lot less secure. In reality however factorization of large numbers is not the only way that we encrypt our data. For example the AES algorithm uses multiple partitions of a key to encrypt its data, which would re-introduce the issue of exponential computation even when using a quantum computer.
+
+ ~\autocite{Daemen2000} ~\autocite{IBM2019}
+
+In effect the introduction of quantum computing will most likely result in a much safer environment, because through the utilization of quantum encryption our data could even become impenetrable for quantum computers. 
+\subsubsection{Data}
+\subsubsection{Physics and chemistry}
+\subsubsection{Open source software}
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodology}
