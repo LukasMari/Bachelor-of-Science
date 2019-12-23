@@ -30,7 +30,7 @@
 }
 
 @Article{Rieffel1998,
-  author  = {Rieffel, Eleanor and Polak, Wolfgang},
+  author  = {Rieffel, Eleanor and Polak},
   title   = {An Introduction to Quantum Computing for Non-Physicists},
   journal = {ACM Computing Surveys},
   year    = {1998},
