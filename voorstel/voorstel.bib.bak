@@ -149,4 +149,24 @@
   publisher  = {ACM},
 }
 
+@Misc{Cirq,
+  author        = {Jarrod R. McClean and Kevin J. Sung and Ian D. Kivlichan and Yudong Cao and Chengyu Dai and E. Schuyler Fried and Craig Gidney and Brendan Gimby and Pranav Gokhale and Thomas Häner and Tarini Hardikar and Vojtěch Havlíček and Oscar Higgott and Cupjin Huang and Josh Izaac and Zhang Jiang and Xinle Liu and Sam McArdle and Matthew Neeley and Thomas O'Brien and Bryan O'Gorman and Isil Ozfidan and Maxwell D. Radin and Jhonathan Romero and Nicholas Rubin and Nicolas P. D. Sawaya and Kanav Setia and Sukin Sim and Damian S. Steiger and Mark Steudtner and Qiming Sun and Wei Sun and Daochen Wang and Fang Zhang and Ryan Babbush},
+  title         = {OpenFermion: The Electronic Structure Package for Quantum Computers},
+  year          = {2017},
+  eprint        = {1710.07629},
+  archiveprefix = {arXiv},
+  primaryclass  = {quant-ph},
+}
+
+@Article{QSharp,
+  author    = {Svore, Krysta and Roetteler, Martin and Geller, Alan and Troyer, Matthias and Azariah, John and Granade, Christopher and Heim, Bettina and Kliuchnikov, Vadym and Mykhailova, Mariia and Paz, Andres},
+  title     = {QSharp},
+  journal   = {Proceedings of the Real World Domain Specific Languages Workshop 2018 on - RWDSL2018},
+  year      = {2018},
+  doi       = {10.1145/3183895.3183901},
+  url       = {http://dx.doi.org/10.1145/3183895.3183901},
+  isbn      = {9781450363556},
+  publisher = {ACM Press},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
