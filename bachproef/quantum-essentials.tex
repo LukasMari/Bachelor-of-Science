@@ -5,11 +5,98 @@ To make sure everyone starts from the same baseline to understand the full poten
 
 \subsection{The Qubit and its classical opponent}
 
-The foundation of any quantum related paper is and will always be the \textbf{qubit}. A qubit is just like a classical computing bit the foundational unit of its computer. Whilst a bit can either be on or off, a qubit has a certain statistical measurement to it. To be able to program on a quantum computer you need to think of the issue of computing an equation in a completely different way. A qubit is also not infinite, meaning that any type of computation needs to happen during the time frame of stable qubit without being thrown of its state by decoherence or any other external factors. 
+The foundation of any quantum related paper is and will always be the \textbf{qubit}. A qubit is just like a classical computing \textbf{bit} the foundational unit of its computer. Whilst a bit can either be on or off, a qubit has a certain statistical measurement to it. To be able to program on a quantum computer you need to think of the issue of computing an equation in a completely different way. A qubit is also not infinite, meaning that any type of computation needs to happen during the time frame of stable qubit without being thrown of its state by decoherence or any other external factors. 
 
-During the execution of your program you are simply not able to look at the intermediary results as this would affect the final result, which would make the whole computation worthless. This means that debugging and looking at variables whilst you are executing a piece of code simply is not possible, which in turn makes writing actual code for a quantum computer a lot more difficult. 
+One of the biggest issues with qubits is that they can behave unstable when influenced by the slightest of external influences, which also means the influence of an external observer. Once a qubit reaches an unstable state it has lost its quantum advantages and becomes a determined particle, which is not available for calculations any more. Meaning that during the execution of your program you are simply not able to look at the intermediary results as this would affect the final result, which would make the whole computation worthless. This means that debugging and looking at variables whilst you are executing a piece of code simply is not possible, which in turn makes writing actual code for a quantum computer a lot more difficult. 
 
-To comprehend the nature of a qubit we need to understand that representing a qubit is only possible in a complex field, which shows of a certain amplitude of the state of the qubit in a point in time. \textit{Felix Bloch} was the individual that came up with the Bloch sphere that we currently use to clearly represent what a qubit is at a certain point in time. 
+To comprehend the nature of a qubit we need to understand that representing a qubit is only possible in a complex field, which shows of a certain amplitude of the state of the qubit in a point in time. \textit{Felix Bloch} was the individual that came up with the Bloch sphere that we currently use to clearly represent what a qubit is at a certain point in time.
+So this amplitude refers to the probability of a qubit at a certain point during the execution. These amplitudes can be influenced during execution by quantum gates, external influences and even quantum decoherence.
+
+Another way of demystifying what a qubit exactly means is by representing it through the use of matrices and the Bra-ket notation. By using these matrices and using matrix transformations we can more easily expose the way a qubit can be influenced during execution. This image is mostly preferred by computer scientist because it gives them a clear image of transformation in the same way an ordinary logic gate can influence an electrical signal. The combination of qubit basis states can be achieved by the utilisation of a tensor product. In the formulae below you are able to see how a 2-qubit system is represented through their matrix-representation.
+
+\[
+	\ket{0}=
+	\begin{bmatrix}
+	1					\\
+	0
+	\end{bmatrix} 
+	and
+	\ket{1}=
+	\begin{bmatrix}
+	0					\\
+	1
+	\end{bmatrix} 
+\]
+\[
+\ket{00}=
+\begin{bmatrix}
+1					\\
+0
+\end{bmatrix} 
+\bigoplus
+\begin{bmatrix}
+1					\\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+1					\\
+0					\\
+0					\\
+0					\\
+\end{bmatrix}
+\quad
+\ket{01}=
+\begin{bmatrix}
+1					\\
+0
+\end{bmatrix} 
+\bigoplus
+\begin{bmatrix}
+0					\\
+1
+\end{bmatrix} =
+\begin{bmatrix}
+0					\\
+1					\\
+0					\\
+0					\\
+\end{bmatrix}
+\]
+\[
+\ket{10}=
+\begin{bmatrix}
+0					\\
+1
+\end{bmatrix} 
+\bigoplus
+\begin{bmatrix}
+1					\\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+0					\\
+0					\\
+1					\\
+0					\\
+\end{bmatrix}
+\quad
+\ket{11}=
+\begin{bmatrix}
+0					\\
+1
+\end{bmatrix} 
+\bigoplus
+\begin{bmatrix}
+0					\\
+1
+\end{bmatrix} =
+\begin{bmatrix}
+0					\\
+0					\\
+0					\\
+1					\\
+\end{bmatrix}
+\]
 
 To sum it up a bit can be only be in a state of on or off and this can be checked throughout execution, whilst a qubit is in a uncertain state during execution much like Schrödinger's cat but once observed is just as determined as a normal bit would be. But determining the state during execution will affect the rest of the experiment and will remove the advantage of quantum in much the same way if Schrödinger went on with the experiment after observation that the cat died, he would be certain that cat would still be dead at a later point.
 
@@ -21,14 +108,75 @@ To sum it up a bit can be only be in a state of on or off and this can be checke
 
 \subsection{Superposition and entanglement}
 
-\textbf{Superposition} is a term a lot of people have heard about and how it could achieve major breakthroughs in the scientific world, but what does it exactly represent is the real question. Quantum advantage is mostly gained from this quantum principle, where a quantum particle can remain in both states at once whilst it has not been observed. To explain this more clearly from a computer science angle, a qubit in superposition is during execution behaving as 0 and 1 at the same time. A concept that seems impossible within a classical frame of mind but also very advantageous if you know where to look. To put it more clearly, e.g. if you are processing a big array of data through your processor, your processor will take one item of the array, process, convert and output it before it will take another item of the array and perform the same thing. A quantum computer could go about this process in a similar yet much more ingenious way. A quantum processor would put an amount of qubits in superposition to represent the array as input, perform the needed amount of quantum gates and receive the output in a single go instead of needing to loop over the full array. ~\autocite{Draper2000}
+\textbf{Superposition} is a term a lot of people have heard about and how it could achieve major breakthroughs in the scientific world, but what it exactly represents is the real question. Quantum advantage is mostly gained from this single quantum principle, where a quantum particle can remain in both states at once whilst it has not been observed. To explain this more clearly from a computer science perspective, a qubit in superposition is during execution behaving as 0 and 1 at the same time. A concept that seems impossible within a classical frame of mind but also very advantageous if you know where to look. E.g. if you are processing a big array of data through your classical processor, your processor will take one item of the array, process, convert and output it before it will take another item of the array and perform the same thing. A quantum processor could go about this process in a similar yet much more ingenious way. It would put an amount of qubits in superposition to represent the full array as input, perform the needed amount of quantum gates and receive the output in a single go instead of needing to loop over the full array. ~\autocite{Draper2000}
 
-\textbf{Entanglement} is another major principle within the realm of quantum physics. It refers to the correlation between entangled qubits where the state of one qubit influences the state of the correlated qubit in a way that it can be exploited theoretically infinitely speed up computation. This entanglement can be achieved inside a quantum computer by the use of quantum gates on qubits in a state of superposition. The deterministic result of the qubits at the end of an experiment will show the same correlation in the results, keeping in mind that enough experiments are performed to defend against quantum decoherence mistakes and other external influences.
+\textbf{Entanglement} is another interesting principle within the realm of quantum physics. It refers to the correlation between entangled qubits where the state of one qubit influences the state of the correlated qubit in a way that it can be exploited and theoretically infinitely speed up computation. This entanglement can be achieved inside a quantum computer by the use of quantum gates on qubits in a state of superposition. The deterministic result of the qubits at the end of an experiment will show the same correlation in the results, keeping in mind that enough experiments are performed to defend against quantum decoherence mistakes and other external influences.
 ~\autocite{fern2016mathematics}
 
-These two principles are constantly being used  by a quantum processor as the one that Google showed of in their latest showcase of their quantum supremacy, ~\textcite{Google2019}. Together they are able to exponentially increase the computing power of a quantum computer, as you add more and more qubits you are exponentially increases the available data items such a processor could handle. For example to be able to simulate the biggest medicine of the 20th century, penicillin you would need 286 functional qubits, which in turn would be able to generate the $2^{286}$ bits of memory. This amount of memory is impossible to be able to achieved with a classical amount of bits, while a quantum computer in turn would be able to complete the simulations with theoretically 286 stable qubits. Actually getting to such a stable amount of qubits in itself will still be a scientific miracle. 
+These two principles are constantly being used  by a quantum processor as the one that Google showed of in their latest showcase of their quantum supremacy, ~\textcite{Google2019}. Together they are able to exponentially increase the computing power of a quantum computer, as you add more and more qubits you are exponentially increases the available data items such a processor could handle. For example to be able to simulate the biggest medicine of the 20th century, penicillin you would need 286 functional qubits, which in turn would be able to generate the $2^{286}$ bits of memory. It would straight up be impossible to get this amount of classical RAM, so it is impossible to simulate this medicine fully. Actually getting to such a stable amount of qubits in itself will still be a scientific miracle. 
 
+\subsection{Quantum gates}
 
+Now one might wonder, how do we create calculations with particles that are not observable and not tangible at a point in time. Quantum gates offer the solution to this question, a quantum gate affects one or more qubits during execution so that a programmer is able to perform changes to the state of the qubit but does not create an unstable qubit. From a programmers perspective they function in a similar way that a normal logic gate functions on an electrical signal inside a regular processor. Furthermore we will provide some frequently used quantum gates.
+
+\subsubsection{Hadamard gate}
+The Hadamard gate is single most important gate for creating a quantum computation. This gate is responsible for putting a qubit inside a state of superposition and is also the one to get it out of this state. So in turn without this gate, quantum advantage would not exist. It maps  $\ket{0}$ to $\frac{\ket{0} + \ket{1}}{\sqrt{2}}$ and $\ket{1}$ to $\frac{\ket{0}-\ket{1}}{\sqrt{2}}$, which are both superposition states.
+
+\[
+H=\frac{1}{\sqrt{2}}\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}
+\]
+
+\subsubsection{Pauli-X gate}
+Performs in a similar way a classical NOT-gate performs on an electrical signal or an absence of it. A qubit in $\ket{0}$ state going through a Paul-X gate would go in a $\ket{1}$ state.
+
+\[
+X=
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\]
+
+\subsubsection{CNOT gate}
+This gate works as a flip for a qubit. It is connected to 1 control qubit marked with an X and targets a target qubit marked with a small circle. If the control qubit is in an activated state it will flip the target qubit.
+
+ \[
+ CNOT=
+ \begin{bmatrix}
+ 1 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 1 \\
+ 0 & 0 & 1 & 0 \\	
+ \end{bmatrix}
+ \]
+
+\subsubsection{Toffoli, CCNOT gate}
+The Toffoli gate works in the same way as a CNOT gate, but instead it has 2 control qubits. So both of them need to be activated to actually flip the target qubit, which logically requires at least 3 qubits in your system.
+
+ \[
+CCNOT=
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 &  0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0  & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0  & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0  & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+\end{bmatrix}
+\]
+
+The mathematical forms are there to show that the addition of a gate to your quantum circuit just mathematically transforms the state of your qubit. So if we look at these transformations of our quantum circuit using mathematics we can more easily make the connection with our classical systems that perform in a similar yet different way.
+
+\subsection{Quantum decoherence}
+
+QC is not solely composed of upsides, the biggest downside is that as of now technology has not progressed far enough to actually provide the necessary amount of stable qubits to perform trustworthy calculations with. For example the simulations of penicillin, a system would need 286 qubits that remain stable for a prolonged period, but as of now  Google has only been able to keep 53 qubits stable for a prolonged period of time using quantum error correction throughout the calculations. The loss of these quantum aspects during execution is called \textit{quantum decoherence}, it is the phenomenon that describes how a qubit falls in an unstable state after being influenced by external forces or even internal influences from the qubits around it inside the system. The whole field has one giant, non-circumventable that goes with it, the larger our quantum systems become, the more internal decoherence we receive from the higher concentration of qubits near each other. This all could mean that there is a limit to how big we are able to make quantum machines, because at a certain point, without proper error correction, the internal decoherence would make every single calculation useless because of the high probability of faulty data throughout. However if we are able to find a solution to this internal decoherence, the amount of qubits inside a system could be limitless and our data processing with it could also be limitless.
+
+TO DO CSV OF DECOHERENCE
 
 
 
