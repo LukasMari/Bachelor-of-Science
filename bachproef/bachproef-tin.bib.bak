@@ -72,4 +72,24 @@
   year      = {2005},
 }
 
+@InProceedings{Schuld2014,
+  author    = {Schuld, Maria and Sinayskiy, Ilya and Petruccione, Francesco},
+  booktitle = {PRICAI 2014: Trends in Artificial Intelligence},
+  title     = {Quantum Computing for Pattern Classification},
+  editor    = {Pham, Duc-Nghia and Park, Seong-Bae},
+  isbn      = {978-3-319-13560-1},
+  pages     = {208--220},
+  publisher = {Springer International Publishing},
+  abstract  = {It is well known that for certain tasks, quantum computing outperforms classical computing. A growing number of contributions try to use this advantage in order to improve or extend classical machine learning algorithms by methods of quantum information theory. This paper gives a brief introduction into quantum machine learning using the example of pattern classification. We introduce a quantum pattern classification algorithm that draws on Trugenberger's proposal for measuring the Hamming distance on a quantum computer [CA Trugenberger, Phys Rev Let 87, 2001] and discuss its advantages using handwritten digit recognition as from the MNIST database.},
+  address   = {Cham},
+  year      = {2014},
+}
+
+@Article{Biamonte2017,
+  author       = {Biamonte, Jacob,Wittek, Peter,Pancotti, Nicola,Rebentrost, Patrick,Wiebe, Nathan,Lloyd, Seth},
+  date         = {2017/09/01},
+  journaltitle = {Nature},
+  title        = {Quantum machine learning},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
