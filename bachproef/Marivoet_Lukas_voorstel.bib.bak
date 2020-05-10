@@ -146,4 +146,11 @@
   year          = {2000},
 }
 
+@Article{,
+  author       = {Jakub Marecek},
+  date         = {2019-08-21},
+  journaltitle = {IBMQ},
+  title        = {Qiskit Finance: Loading and Processing Stock-Market Time-Series Data},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
