@@ -12,7 +12,11 @@ In the following part, we will lay out how interested parties are able to perfor
 
 \subsection{Grover's search algorithm in a practical fashion}
 
+\subsubsection{Grover's search unstructured database search}
+
 Let us start of practical with one of the two most well known quantum algorithms, which is the Grover Search algorithm. If this algorithm were to be applicable on a large scale it could indeed affect the current mainframe environment of DB2 databases in a drastic approach. The whole premise of the algorithm is that we are able to speed up the search time in an unstructured database quadratically. This all meaning when a computer needs to find an item with an unique attribute that differentiates itself from the other items in the list, QC could become the main solution. The whole algorithm uses something called "amplitude amplification" where the algorithm influences the probabilities in such a manner that the correct item has the highest probability after the Quantum computation. \autocite{Grover1996}
+
+\subsubsection{Grover's search algorithm in an applied form}
 
 For the experiment itself, we have chosen for the "Boolean satisfiability problem" which uses Grover's way of amplitude amplification to find the correct result. This computer science question goes as follows, given a boolean comparison of multiple parts are we able to determine the outcome to get that specific TRUE. Being to solve this comparison in a way that could abuse the fact of superposition could prove useful when we scale out the problem towards thousands or even millions of comparisons for other algorithms. For now the 3-SAT problem has been chosen to be performed using Qiskit to show off the potential of QC for now.
 
@@ -20,7 +24,9 @@ You are able to view the function stated below as the problem that we will try a
 
 $ f(x,y,z) = (\neg x \vee y \vee \neg z) \wedge  ( x \vee \neg y \vee \neg z) \wedge ( x \vee \neg y \vee  z) \wedge (\neg x \vee \neg y \vee z) \wedge  ( x \vee y \vee  z)	 $
 				 
-Using a simulation of a quantum computer we are able to show the results in figure below. The probabilities have been amplified to where they are the correct results of this boolean expression. The first figure below show the probabilities through the simulation, meaning that these probabilities have not been influenced by quantum decoherence on the real device it is more clearly visible that without any form of quantum error correction QC will run into a brick wall. 
+\subsubsection{Executing the quantum algorithm}				 
+
+Using a simulation of a quantum computer we are able to show the results in figure 4.1 below. The probabilities have been amplified to where they are the correct results of this boolean expression. The first figure below show the probabilities through the simulation, meaning that these probabilities have not been influenced by quantum decoherence on the real device it is more clearly visible that without any form of quantum error correction QC will run into a brick wall. 
 
 \begin{figure}[h]
 	\centering
@@ -28,9 +34,6 @@ Using a simulation of a quantum computer we are able to show the results in figu
 	\caption{These are the results of executing the algorithm for the 3-SAT problem on a \textbf{quantum simulator} that comes with Qiskit. The encoding refers to the TRUE/FALSE value of the x,y,z respectively}
 \end{figure}
 
-If you feel that your algorithm is on point by testing it through the simulator, IBM allows its recreational users to send off their circuits to real devices that have functional qubits to play around with. ( At the time of writing the ibmq16Melbourne device had 15 qubits available to mess around with)
-
-The reason for choosing this specific experiment is to show that even problems that just require us to encode boolean statements we needed 694 quantum gates. IBMQ transpiles the sent-off circuit to the necessary amount of gates needed for this specific calculation. It does not keep in account that having this much gates on a single line of computation invites a multitude of quantum decoherence issues during runtime.
 
 \begin{figure}[h]
 	\centering
@@ -38,25 +41,44 @@ The reason for choosing this specific experiment is to show that even problems t
 	\caption{These are the results of executing the algorithm for the 3-SAT problem using 15 qubits on a \textbf{real quantum device} that comes with Qiskit. The encoding refers to the TRUE/FALSE value of the x,y,z respectively}
 \end{figure}
 
-If you have looked closely at the image above (4.2) you are able to see that decoherence for now breaks the probabilities of a computation too much to reliably trust any computation of this size out of a quantum computer. The values become distorted over time by all types of interference even if all the interference from inside the machine is not accounted for the machine can become influenced by a single external interaction like temperature, pressure etc. 
+If you feel that your algorithm is on point by testing it through the simulator, IBM allows its recreational users to send off their circuits to real devices that have functional qubits to play around with. ( At the time of writing the ibmq16Melbourne device had 15 qubits available to mess around with)
 
+The reason for choosing this specific experiment is to show that even problems that just require us to encode boolean statements we needed 694 quantum gates. IBMQ transpiles the sent-off circuit to the necessary amount of gates needed for this specific calculation. It does not keep in account that having this much gates on a single line of computation invites a multitude of quantum decoherence issues during runtime.
 
+If you have looked closely at the image above (figure 4.2) you are able to see that decoherence for now breaks the probabilities of a computation too much to reliably trust any computation of this size out of a quantum computer. The values become distorted over time by all types of interference even if all the interference from inside the machine is not accounted for the machine can become influenced by a single external interaction like temperature, pressure etc. 
+
+\begin{center}
+	\begin{tabular}{|| c c ||}
+		\hline
+		$f(x,y,z)$ & TRUE/FALSE \\
+		\hline\hline
+		0 0 0 & FALSE \\ 
+		0 0 1 & TRUE \\
+		0 1 0 & FALSE \\
+		0 1 1 & FALSE \\
+		1 0 0 & TRUE \\
+		1 0 1 & FALSE \\
+		1 1 0 & FALSE \\
+		1 1 1 & TRUE \\
+		\hline
+	\end{tabular}
+\end{center}
 
 If we compare the manually gathered results in the table above across the simulated version and the real version, we are clearly able to see that decoherence has played too big of a role to be certain of any output for these types of large computations.
 
-Let us work out a clear example to make sure our probabilities are incorrect. If we take the highest probability of the real execution which is the configuration of $101$. Meaning that the quantum computer determined that when X and Z are true the whole boolean expression will result in a returned value of TRUE. This is simply not a valid option for this boolean expression. If we look at the first part of this boolean expression we can see that this configuration would return a FALSE resulting in the whole expression being FALSE because all the parts are connected with a logical AND. 
+Let us work out a clear example to make sure our probabilities generated by the real quantum device are incorrect. If we take the highest probability of the real execution which is the configuration of $101$. Meaning that the quantum computer determined that when X and Z are true the whole boolean expression will result in a returned value of TRUE. This is simply not a valid option for this boolean expression. If we look at the first part of this boolean expression we can see that this configuration would return a FALSE resulting in the whole expression being FALSE because all the parts are connected with a logical AND. 
 
 $f(1,0,1) = (0 \vee 0 \vee 0 \vee) \wedge (1 \vee 1 \vee 0)  \wedge ( 1 \vee 1 \vee  1) \wedge ( 0 \vee 1 \vee 1) \wedge  ( 1 \vee 0 \vee  1)$
 
- 
+\subsubsection{Future prospects}
 
-As for now we are able to play around with the greater problems of quantum computing but to be able to reliably solve real-world solutions in a beneficial way remains an uncertainty.
+As for now we are able to play around with the greater problems of quantum computing but to be able to \underline{reliably} solve real-world solutions in a beneficial way remains an uncertainty.
 
 So with the current state of engineering, computer scientists will have to wait to fully utilise the system in a reliable fashion. But as engineering develops the power of quantum computing will increase exponentially with each added qubit to the system, which would make algorithms like this extremely valuable for data-crunching. When we find a way to circumvent the interference of quantum decoherence or when we reliably fix the errors it produces, a quantum system could become an essential tool for every sector willing to innovate. 
 
 
 
-\subsubsection{Data-encoding in QC}
+\subsection{Data-encoding in QC}
 
 As the experiment clearly shows there is an actual advantage reachable with quantum computing. Of course quantum decoherence is a main aspect of QC and solving it would be greatly beneficial for the whole sector, but there is also a different problem that arises with defining our classical way of problems in a quantum way. The way we represent data in a quantum circuit quickly becomes overly complicated for any large database structure. Quantum computers are great in predicting what quantum effects will occur and where quantum physics influences specific sectors. The issue lies in the fact that we want to input our classical database into a quantum device and hopefully receive the results in a readable classical solution. 
 
