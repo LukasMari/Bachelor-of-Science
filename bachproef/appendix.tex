@@ -5,11 +5,12 @@
 \chapter{Using Qiskit yourself}
 \label{ch:appendix}
 
-For the practical execution, we preferred to use Anaconda 1.9.12 for all our experiments. By using an environment that was just created for using Qiskit, we could debug way easier as there only were a handful of addition needed.
+For the practical execution, we preferred to use Anaconda 1.9.12 for all our experiments. By using an environment that was just created for using Qiskit, we could debug way easier as there only were a handful of additions needed.
 
-You will need to pip install, Qiskit, matplotlib, jupyter and Pyscience to have an all-round work environment for creating your own circuits.
+You will need to pip install: Qiskit, matplotlib, jupyter and Pyscience, to have an all-round work environment for creating your own circuits.
 
 Qiskit.org will give a full explanation, if the basics would not suffice.
+If the basics would not suffice, then a referation can be made to qiskit.org for a more thorough explanation
 
 
 \section{Setting up your Python-Qiskit environment}
@@ -24,7 +25,7 @@ Make sure you are able to execute the commands as shown in figure A.1 to ensure 
 
 \section{Connecting your Python environment with IBMQ}
 
-If you would like to use the actual devices to perform your tests, you need to create an account on \href{https://quantum-computing.ibm.com/}. Then you need to find your private key and connect it to the environment in a Jupyter notebook as seen in figure A.2. This key will be used each time you send off a circuit to the IBMQ quantum devices, the use of these devices is \textit{free of charge}.
+If you would like to use any of the actual devices to perform your tests, you need to create an account on \textit{https://quantum-computing.ibm.com}. Then you need to find your private key and connect it to the environment in a Jupyter notebook as demonstrated in figure A.2. This key will be used each time you send off a circuit to the IBMQ quantum device. The use of these devices is \textit{free of charge}.
 
 \begin{figure}
 	\centering
@@ -34,11 +35,11 @@ If you would like to use the actual devices to perform your tests, you need to c
 
 
 \section{Running the quantum decoherence example}
-This section will show the simple way that you can show quantum decoherence taken an effect on your circuits. We will put 1 qubit in an elevated $\ket{1}$ state followed up with a measurement and then send it off to a quantum device.
+This section will show the simple way that quantum decoherence can effect the used circuits. We will put 1 qubit in an elevated $\ket{1}$ state followed up with a measurement and then send it off to a quantum device.
 
-This are the needed imports for the basic example.
+This are the needed imports for the basic example:
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 from qiskit import(
 QuantumCircuit,
 execute, 
@@ -50,7 +51,7 @@ from qiskit.visualization import plot_histogram
 
 Here we create a quantum register of 1 qubit and apply a Pauli-X gate, followed up by a measurement to a classical register.
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 circuit = QuantumCircuit(1,1)
 circuit.x(0)
 circuit.measure(0,0)
@@ -58,21 +59,21 @@ circuit.measure(0,0)
 
 Using matplotlib will result in a much cleaner output of the circuit.
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 circuit.draw(output= "mpl")
 \end{verbatim}
 
-These are the needed actions to actually set up your device. You will need to choose your ibmq-device on the website where you have signed up for an IBMQ-account.
+These are the needed actions to actually set up your device. You will need to choose your IBMQ-device on the website where you have signed up for an IBMQ-account.
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 IBMQ.load_account()
 prov = IBMQ.get_provider(hub='ibm-q')
 device = prov.get_backend('ibmq_armonk')
 \end{verbatim}
 
-Here we actually send off the circuit towards our device.
+Here we send off the circuit towards our device.
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 job = execute(circuit, backend = device, shots = 1024)
 from qiskit.tools.monitor import job_monitor
 job_monitor(job)
@@ -86,7 +87,7 @@ In this part, we will showcase the code of the practical portion of this paper w
 
 First we will perform the algorithm through the use of the simulator, then we will send the circuit off to an IBM device capable of handling the large circuit. (13 qubits needed at the least)
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 import numpy as np
 import matplotlib as plt
 from qiskit import *
@@ -95,12 +96,13 @@ from qiskit.visualization import plot_histogram
 %config InlineBackend.figure_format = 'svg'
 from qiskit.aqua import QuantumInstance
 from qiskit.aqua.algorithms import Grover
-from qiskit.aqua.components.oracles import LogicalExpressionOracle, TruthTableOracle
+from qiskit.aqua.components.oracles import LogicalExpressionOracle,
+											 TruthTableOracle
 \end{verbatim}
 
 This is the specific encoding that is used for encoding a Boolean satisfiability problem into the Grover search algorithm.
 
-\begin{verbatim}[frame=single]
+\begin{verbatim}
 input_3sat = '''
 c example DIMACS-CNF 3-SAT
 p cnf 3 5
@@ -116,7 +118,7 @@ p cnf 3 5
 oracle = LogicalExpressionOracle(input_3sat)
 \end{verbatim}
 
-Using the previously mentioned encoding and inputting this into Grover's search algorithm is really straightforward when we use the Qiskit-framework.
+Using the previously mentioned encoding and inputting this into Grover's search algorithm makes use of a simple method call when we use the Qiskit-framework.
 
 \begin{verbatim}[frame=single]
 grover = Grover(oracle)
@@ -171,7 +173,7 @@ gates =  OrderedDict([('cx', 397), ('u2', 176), ('u1', 68), ('u3', 48),
 depth =  431
 \end{verbatim}
 
-Once the circuit has run successfully you are able to view the result on the website of ibmqexperience in nicely put together format as visible from figure.
+Once the circuit has run successfully you are able to view the result on the website of ibmqexperience in a format as visible from figure.
 
 \begin{verbatim}
 job = execute(result['circuit'], backend = backend , shots = 1024)
